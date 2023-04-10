@@ -60,7 +60,8 @@ namespace Integral
 
 
 
-            Function f = new Function(-10, 10, -10, 10);
+
+            Function f = new Function(-3, 10, -10, 10);
             showAxes(f);
 
             int step = 10;

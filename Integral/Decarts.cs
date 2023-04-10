@@ -19,12 +19,13 @@ namespace Integral
 
         public Decarts(ScreenPoints pointS, Size panel_size, Function f)
         {
-            double indent = panel_size.Height / (f.maxY - f.minY);
-            this.Y = pointS.Y / indent + f.maxY;//-minY
-            double minX, maxX;
-            maxX = panel_size.Width / (indent * 2);
-            minX = -maxX;
-            this.X = minX + pointS.X / indent;
+            double indent_y = panel_size.Height / (f.maxY - f.minY);
+            double indent_x = panel_size.Width / (f.maxX - f.minX);
+            this.Y = f.maxY - pointS.Y / indent_y;//-minY
+            //double minX, maxX;
+            //maxX = panel_size.Width / (indent * 2);
+            //minX = -maxX;
+            this.X = f.minX + pointS.X / indent_x;
         }
     }
 }
